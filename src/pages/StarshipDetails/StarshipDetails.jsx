@@ -15,11 +15,13 @@ const StarshipDetails = (starship) => {
   })
   return ( 
     <>
-      <h2> EACH STARSHIP </h2>
+    <div className="each-ship-container">
         {starshipDetails.url ?
         <>
-          <h4>Name: </h4>
+          <h4 className="each-starship-card">Name: </h4>
           {starshipDetails.name} 
+          <h4>Model: </h4>
+          {starshipDetails.model}
           <h4>Manufacturer: </h4>
           {starshipDetails.manufacturer} 
           <h4>Max Speed </h4>
@@ -30,13 +32,16 @@ const StarshipDetails = (starship) => {
           {starshipDetails.passengers} 
           <h4>Starship Class: </h4>
           {starshipDetails.starship_class}
-
         </>
         :
         <>
           <h2>Loading Starship Details...</h2>
         </>
-        }
+        }<br /> <br /> <br />
+      <a href="/">
+      <button className="btn">RETURN</button>
+      </a><br />
+    </div>
     </>
   );
 }
